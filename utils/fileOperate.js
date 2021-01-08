@@ -32,7 +32,7 @@ function moveAllFiles(originPath, destPath) {
       if (fs.statSync(curPath).isDirectory()) {
         moveAllFiles(curPath, `${destPath}/${file}`)
       } else {
-        fs.writeFileSync(`${destPath}/${file}`, fs.readFileSync(curPath, 'utf8', 'utf8'))
+        fs.writeFileSync(`${destPath}/${file}`, fs.readFileSync(curPath, 'utf8'), 'utf8')
       }
     })
   } catch (err) {
