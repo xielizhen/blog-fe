@@ -34,8 +34,3 @@ lang: en-us
 console.log('你好， vuePress!')
 ```
 :::
-
-
-::: tip
-这是又一个提示
-:::

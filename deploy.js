@@ -27,7 +27,7 @@ const cmd = `
   `
 
 processCmdInTerminal(cmd).then(res => {
-  console.log(res)
+  logger.info('发布完成...')
 }).catch(err => {
   logger.error(err.message)
 })
