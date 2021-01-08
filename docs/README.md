@@ -33,7 +33,9 @@ lang: en-us
 ```js
 console.log('你好， vuePress!')
 ```
-:::d
+:::
 
-# 更新测试1
-# 更新测试2
+
+::: tip
+这是又一个提示
+:::
