@@ -1,0 +1,39 @@
+---
+title: blooging like a hacker
+lang: en-us
+---
+
+# hello world
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+:tada: :100:
+
+[[toc]]
+
+::: tip
+这是一个提示
+:::
+
+
+::: warning
+这是一个警告
+:::
+
+::: danger
+这是一个危险警告
+:::
+
+::: details stop
+这是一个详情块， 在IE / Edge 中不生效
+```js
+console.log('你好， vuePress!')
+```
+:::d
+
+# 更新测试1
+# 更新测试2
