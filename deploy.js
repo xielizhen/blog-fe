@@ -3,7 +3,7 @@ const args = process.argv.splice(2)
 
 const cmd = `
   # push源文件
-  git add -A
+  git add .
   git commit -m 'test: 测试一下'
   git push origin
 
@@ -20,6 +20,7 @@ const cmd = `
   cd ../blog
 
   # 提交dist中的文件
+  git add .
   git commit -m 'update'
   git push origin
 `
