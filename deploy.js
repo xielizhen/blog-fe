@@ -7,6 +7,8 @@ if (!commitInfo) {
   return logger.error('git commit: 必须输入msg')
 }
 
+console.log(args)
+
 const cmd = `
   # push源文件
   git add .
