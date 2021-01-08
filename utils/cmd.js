@@ -1,5 +1,5 @@
 const { spawn } = require('child_process')
-const fs = require('fs')
+const chalk = require('chalk')
 
 function processCmdInTerminal(cmd, config) {
   return new Promise((resolve, reject) => {
@@ -15,50 +15,27 @@ function processCmdInTerminal(cmd, config) {
   })
 }
 
-function deleteAllFiles(filePath) {
-  if (!fs.existsSync(filePath)) return
-  try {
-    const excludeFiles = ['.git', 'README.md']
-    const files = fs.readdirSync(filePath).filter(
-      o => !excludeFiles.map(f => f.toLowerCase()).includes(o.toLowerCase())
-    )
-	  files.forEach(file => {
-	  	const curPath = `${filePath}/${file}`
-	  	if(fs.statSync(curPath).isDirectory()) {
-	  		deleteAllFiles(curPath)
-	  	} else {
-	  		fs.unlinkSync(curPath)
-	  	}
-	  })
-  } catch (err) {
-    throw new Error(err)
-  }
-}
-
-function moveDistToBlog(originPath, destPath) {
-  if (!fs.existsSync(originPath)) return
-  if (!fs.existsSync(destPath)) {
-    fs.mkdirSync(destPath)
-  }
-  try {
-    const files = fs.readdirSync(originPath)
-    files.forEach(file => {
-      const curPath = `${originPath}/${file}`
-      if (fs.statSync(curPath).isDirectory()) {
-        moveDistToBlog(curPath, `${destPath}/${file}`)
-      } else {
-        fs.writeFileSync(`${destPath}/${file}`, fs.readFileSync(curPath, 'utf8', 'utf8'))
-      }
-    })
-  } catch (err) {
-    throw new Error(err)
+const logger = {
+  set stdout(buffer) {
+      process.stdout.write(buffer.toString(), 'utf8')
+  },
+  info: (message) => {
+      logger.stdout = chalk.bold(message)
+  },
+  warn: (message) => {
+      logger.stdout = chalk.black.bgYellow.bold(message)
+  },
+  success: (message) => {
+      logger.stdout = chalk.black.bgGreen.bold(message)
+  },
+  error: (message) => {
+      logger.stdout = chalk.black.bgRed.bold.strikethrough(message)
   }
 }
 
 
 module.exports = {
   processCmdInTerminal,
-  deleteAllFiles,
-  moveDistToBlog
+  logger
 }
 
