@@ -11,7 +11,7 @@ const cmd = `
   yarn build
 
   # 删除blog中的文件
-  rm -rf ../dist/*
+  rm -rf ../blog/*
 
   # 复制dist中的文件到blog中
   cp docs/.vuepress/dist/ ../blog
