@@ -6,6 +6,7 @@ function processCmdInTerminal(cmd, config) {
     const child = spawn(cmd, {
       shell: true,
       env: process.env,
+      encoding: 'utf8',
       stdio: 'inherit',
       ...config
     })
@@ -17,19 +18,19 @@ function processCmdInTerminal(cmd, config) {
 
 const logger = {
   set stdout(buffer) {
-      process.stdout.write(buffer.toString(), 'utf8')
+    process.stdout.write(buffer.toString(), 'utf8')
   },
   info: (message) => {
-      logger.stdout = chalk.bold(message)
+    logger.stdout = chalk.bold(message)
   },
   warn: (message) => {
-      logger.stdout = chalk.black.bgYellow.bold(message)
+    logger.stdout = chalk.yellow.bold(message)
   },
   success: (message) => {
-      logger.stdout = chalk.black.bgGreen.bold(message)
+    logger.stdout = chalk.green.bold(message)
   },
   error: (message) => {
-      logger.stdout = chalk.black.bgRed.bold.strikethrough(message)
+    logger.stdout = chalk.red.bold.underline(message)
   }
 }
 
