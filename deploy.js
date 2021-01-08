@@ -10,13 +10,8 @@ const cmd = `
   # docs打包
   yarn build
 
-  # 删除blog中的文件
-  rm -rf ../blog/*
-
-  # 复制dist中的文件到blog中
-  cp docs/.vuepress/dist/ ../blog
-  
-  # 进入blog
+  # 文件操作
+  node ./utils/moveDist.js
   cd ../blog
 
   # 提交dist中的文件
