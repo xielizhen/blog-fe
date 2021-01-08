@@ -30,7 +30,7 @@ const logger = {
     logger.stdout = chalk.green.bold(message)
   },
   error: (message) => {
-    logger.stdout = chalk.red.bold.underline(message)
+    logger.stdout = chalk.red.bold(message)
   }
 }
 
