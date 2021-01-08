@@ -7,12 +7,10 @@ if (!commitInfo) {
   return logger.error('git commit: 必须输入msg')
 }
 
-console.log(args)
-
 const cmd = `
   # push源文件
   git add .
-  git commit -m ${commitInfo.toString()}
+  git commit -m "${commitInfo}"
   git push origin ${branch}
 
   # docs打包
@@ -24,9 +22,9 @@ const cmd = `
 
   # 提交dist中的文件
   git add .
-  git commit -m ${commitInfo}
+  git commit -m "${commitInfo}"
   git push origin ${branch}
-`
+  `
 
 processCmdInTerminal(cmd).then(res => {
   console.log(res)

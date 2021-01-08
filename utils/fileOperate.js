@@ -30,7 +30,7 @@ function moveAllFiles(originPath, destPath) {
     files.forEach(file => {
       const curPath = `${originPath}/${file}`
       if (fs.statSync(curPath).isDirectory()) {
-        moveDistToBlog(curPath, `${destPath}/${file}`)
+        moveAllFiles(curPath, `${destPath}/${file}`)
       } else {
         fs.writeFileSync(`${destPath}/${file}`, fs.readFileSync(curPath, 'utf8', 'utf8'))
       }

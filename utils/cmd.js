@@ -1,7 +1,7 @@
 const { spawn } = require('child_process')
 const chalk = require('chalk')
 
-function processCmdInTerminal(cmd, config) {
+function processCmdInTerminal(cmd, config = {}) {
   return new Promise((resolve, reject) => {
     const child = spawn(cmd, {
       shell: true,
