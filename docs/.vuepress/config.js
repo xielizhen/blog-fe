@@ -9,17 +9,33 @@ module.exports = {
       {text: '交流', link: '/zyqq/wheel'},
     ],
     sidebar: [
+      // {
+      //   title: '更新动态',
+      //   collapsable: true,
+      //   sidebarDepth: 1,
+      //   path: '/news',
+      //   children: [
+      //     {
+      //       title: 'react18版',
+      //       path: '/news/react_18',
+      //       sidebarDepth: 2
+      //     }
+      //   ]
+      // },
       {
-        title: 'Webpack',
-        path: '/webpack',
-        collapsable: false,
+        title: '零散思绪',
+        collapsable: true,
         sidebarDepth: 1,
+        path: '/articles',
         children: [
           {
-            title: '手把手撸loader',
-            path: '/webpack/loader',
-            sidebarDepth: 2
+            title: '前端渲染方案',
+            path: '/articles/render'
           }
+          // {
+          //   title: '文件上传二三事',
+          //   path: '/articles/upload'
+          // }  
         ]
       }
     ]
@@ -27,7 +43,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        'src': '../.vuepress'
+        'src': '../.vuepress',
+        'imgs': '../.vuepress/public/imgs'
       }
     }
   }
