@@ -2,7 +2,6 @@
 Performance API中的指标逐步演进成用户性能体验相关的指标。
 
 ![An image](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2020/6/2/1727325523bb7f04~tplv-t2oaga2asx-watermark.awebp)
-![Image from alias](~src/public/imgs/performance.png)
 
 <https://w3c.github.io/navigation-timing/>  
 <https://w3c.github.io/paint-timing/> 

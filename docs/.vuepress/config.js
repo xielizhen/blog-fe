@@ -31,11 +31,11 @@ module.exports = {
           {
             title: '前端渲染方案',
             path: '/articles/render'
-          }
-          // {
-          //   title: '文件上传二三事',
-          //   path: '/articles/upload'
-          // }  
+          },
+          {
+            title: '模块化演进',
+            path: '/articles/module'
+          }  
         ]
       }
     ]
